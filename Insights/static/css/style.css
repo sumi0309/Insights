@@ -1,0 +1,27 @@
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+}
+.container {
+  margin-top: 100px;
+}
+.btn-custom {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px 30px;
+  margin: 15px;
+  width: 250px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-custom:hover {
+  background-color: #45a049;
+}
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
