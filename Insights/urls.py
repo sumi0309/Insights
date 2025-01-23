@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.home),
     path('weather/', views.weather_page, name='weather_page'),
     path('get_weather/', weather.get_weather, name='get_weather'),
+    path('select_location/', weather.select_location, name='select_location'),
 ]
