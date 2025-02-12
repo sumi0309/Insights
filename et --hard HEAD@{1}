@@ -1,0 +1,60 @@
+[33mcommit 93c3780087d27c547907519dc019794800a4f8a1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 13ade89 3a22d23
+Author: Sumiran Jaiswal <sumi0309@umd.edu>
+Date:   Tue Feb 11 20:51:33 2025 -0500
+
+    Merge branch 'master' of https://github.com/sumi0309/Insights
+
+[33mcommit 13ade893283eba17db5aff9f7d32e28ec0ae9a75[m
+Author: Sumiran Jaiswal <sumi0309@umd.edu>
+Date:   Tue Feb 11 20:51:02 2025 -0500
+
+    UI Changes
+
+[33mcommit 3a22d23fc33658c529ae6567f4470db996a8892a[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Sumiran Jaiswal <87477723+sumi0309@users.noreply.github.com>
+Date:   Sat Feb 8 17:22:17 2025 -0500
+
+    Update README.md
+
+[33mcommit 1411626eef4a02583f1544a57d5fc7872a8e6039[m
+Author: Sumiran Jaiswal <87477723+sumi0309@users.noreply.github.com>
+Date:   Sat Feb 8 17:21:09 2025 -0500
+
+    Update README.md
+
+[33mcommit 74cd36ae0bd1a1016261136c8df466e585711963[m
+Author: Sumiran Jaiswal <87477723+sumi0309@users.noreply.github.com>
+Date:   Sat Feb 8 17:06:14 2025 -0500
+
+    Update README.md
+
+[33mcommit 36fa98aec766191a6486cfeefca6d63a17d92313[m
+Author: Sumiran Jaiswal <87477723+sumi0309@users.noreply.github.com>
+Date:   Sat Feb 8 17:03:15 2025 -0500
+
+    Create README.md
+
+[33mcommit 8c353608547247be26e45616e1d343b87c512856[m
+Author: Sumiran Jaiswal <sumi0309@umd.edu>
+Date:   Thu Jan 30 17:37:28 2025 -0500
+
+    Started getting weather
+
+[33mcommit 22a273fbb44c58fe48f2cdefaf064cb0dc2971ed[m
+Author: Sumiran Jaiswal <sumi0309@umd.edu>
+Date:   Thu Jan 23 11:49:44 2025 -0500
+
+    Display fetched locations on frontend
+
+[33mcommit 3ac7ce7726fe48d5571a449e6fc2412d75ff0896[m
+Author: Sumiran Jaiswal <sumi0309@umd.edu>
+Date:   Wed Jan 22 20:15:32 2025 -0500
+
+    Update Weather.py
+
+[33mcommit a84b4e00fcc952937919601b11ec9b0f1dec9ec8[m
+Author: Sumiran Jaiswal <sumi0309@umd.edu>
+Date:   Wed Jan 22 19:34:31 2025 -0500
+
+    Project setup
