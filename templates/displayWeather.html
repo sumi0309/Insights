@@ -1,0 +1,33 @@
+<!-- templates/displayWeather.html -->
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>Weather Details</h1>
+  <p><strong>Location:</strong> {{ display_name }}</p>
+  <p><strong>Latitude:</strong> {{ latitude }}</p>
+  <p><strong>Longitude:</strong> {{ longitude }}</p>
+
+  <h2>Current Weather</h2>
+  <p>
+    <strong>Temperature:</strong> {{ weather_data.current.temperature_2m }} °F
+  </p>
+  <p><strong>Feels Like:</strong> {{ weather_data.current.feelsLike }} °F</p>
+  <p>
+    <strong>Precipitation:</strong> {{ weather_data.current.precipitation }} mm
+  </p>
+  <p><strong>Rain:</strong> {{ weather_data.current.rain }} mm</p>
+  <p><strong>Snowfall:</strong> {{ weather_data.current.snowfall }} mm</p>
+  <p>
+    <strong>Wind Speed:</strong> {{ weather_data.current.wind_speed_10m }} mph
+  </p>
+
+  <h2>Daily Weather</h2>
+  {% for max_temp, min_temp in daily_temp %}
+  <p><strong>Max Temperature:</strong> {{ max_temp }} °F</p>
+  <p><strong>Min Temperature:</strong> {{ min_temp }} °F</p>
+  {% endfor %}
+  <p><strong>Sunrise:</strong> {{ weather_data.daily.sunrise }}</p>
+  <p><strong>Sunset:</strong> {{ weather_data.daily.sunset }}</p>
+
+  <a href="{% url 'weather_page' %}" class="btn btn-custom">Go Back</a>
+</div>
+{% endblock %}

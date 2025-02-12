@@ -4,11 +4,19 @@ import urllib.parse
 import requests  
 from dotenv import load_dotenv
 import os
+import openmeteo_requests
+import requests_cache
+import pandas as pd
+from retry_requests import retry
 
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY") 
 BASE_URL = "https://geocode.maps.co/search?q="
+
+cache_session = requests_cache.CachedSession('.cache', expire_after=3600)
+retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
+openmeteo = openmeteo_requests.Client(session=retry_session)
 
 def weather_page(request):
     """Renders the weather input page."""
@@ -60,7 +68,16 @@ def select_location(request):
                 selected_object = next((item for item in data if item["display_name"] == selected_display_name), None)
 
                 if selected_object:
-                    return JsonResponse(selected_object, safe=False)
+                    latitude = selected_object.get("lat")
+                    longitude = selected_object.get("lon")
+                    display_name = selected_object.get("display_name")
+
+                    request.session['latitude'] = latitude
+                    request.session['longitude'] = longitude
+                    request.session['display_name'] = display_name
+
+                    return JsonResponse({"success": True})
+
                 else:
                     return HttpResponse("Selected location not found.", status=404)
 
@@ -71,3 +88,22 @@ def select_location(request):
             return HttpResponse(f"API request failed: {e}", status=500)
 
     return HttpResponse("Invalid request method.", status=400)
+
+
+def weather_display(request):
+    """Fetch stored location data from session and display it."""
+    latitude = request.session.get('latitude')
+    longitude = request.session.get('longitude')
+    display_name = request.session.get('display_name')
+
+    if not latitude or not longitude or not display_name:
+        return HttpResponse("No location data found in session. Please select a location first.", status=404)
+
+    return render(request, 'displayWeather.html', {
+        "latitude": latitude,
+        "longitude": longitude,
+        "display_name": display_name
+    })
+
+
+
